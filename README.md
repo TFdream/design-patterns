@@ -1,6 +1,5 @@
 # Design-patterns
-##Design patterns written in java
-## 一.Singleton
+## 一、Singleton
 ### 1.模式定义
 确保一个类仅有一个实例，并且提供一个访问它的全局访问点。
 
@@ -26,32 +25,33 @@
 
 ![GitHub](http://images.cnblogs.com/cnblogs_com/feipeng/Pic11.jpg "Builder Pic")
 
-###代码示例
+###4.代码示例
 [示例1:PersonBuilderDemo.java](src/main/java/com/ricky/designpattern/builder/PersonBuilderDemo.java)<br>
 [示例2:CarDemo.java](src/main/java/com/ricky/designpattern/builder/CarDemo.java)<br>
 [示例3:IvrEngineDemo.java](src/main/java/com/ricky/designpattern/builder/IvrEngineDemo.java)<br>
 [示例4:MessageDemo.java](src/main/java/com/ricky/designpattern/builder/MessageDemo.java)<br>
 <br>
-### 优缺点
+### 5.优缺点
 #### 优点
 * 在建造者模式中， 客户端不必知道产品内部组成的细节，将产品本身与产品的创建过程解耦，使得相同的创建过程可以创建不同的产品对象。
 * 可以更加精细地控制产品的创建过程。将复杂产品的创建步骤分解在不同的方法中，使得创建过程更加清晰，也更方便使用程序来控制创建过程。
 * 增加新的具体建造者无须修改原有类库的代码，指挥者类针对抽象建造者类编程，系统扩展方便，符合“开闭原则”。
 
-<br>
 #### 缺点
 * 使用Builder模式是肯定会增加代码量的。此外，尽管客户端的代码可读性明显改善，但随之而来的客户端代码变得更加冗长。
 * Builder会增加个类代码，这也意味着开发者在给类增加属性时有时会忘记给该属性添加支持的builder。
 
 <br>
-### 与工厂模式的区别
+### 6.与工厂模式的区别
 
 <br>
-### 适用场景
+### 7.适用场景
 在以下情况下可以使用建造者模式：<br>
 * 需要生成的产品对象有复杂的内部结构，这些产品对象通常包含多个成员属性。
 * 需要生成的产品对象的属性相互依赖，需要指定其生成顺序。
 
-### 资料
+### 8.资料
 [java-design-patterns](https://github.com/iluwatar/java-design-patterns)<br>
+
+
 
