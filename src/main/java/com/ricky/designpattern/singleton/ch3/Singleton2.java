@@ -1,4 +1,4 @@
-package com.ricky.designpattern.singleton.ch2;
+package com.ricky.designpattern.singleton.ch3;
 
 /**
  * 单例模式-懒汉式
@@ -7,12 +7,13 @@ package com.ricky.designpattern.singleton.ch2;
  * @create 2016-07-13 16:13
  */
 public class Singleton2 {
-    private static volatile Singleton2 instance;
+    private volatile static Singleton2 instance;
 
     private Singleton2(){
         System.out.println("call Singleton2 constructor");
     }
 
+    //double-check
     public static Singleton2 getInstance(){
         if(instance==null){
             synchronized (Singleton2.class){

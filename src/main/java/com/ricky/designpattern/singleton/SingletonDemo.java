@@ -1,8 +1,8 @@
 package com.ricky.designpattern.singleton;
 
 import com.ricky.designpattern.singleton.ch1.Singleton;
-import com.ricky.designpattern.singleton.ch2.Singleton2;
-import com.ricky.designpattern.singleton.ch3.Singleton3;
+import com.ricky.designpattern.singleton.ch3.Singleton2;
+import com.ricky.designpattern.singleton.ch4.Singleton3;
 
 /**
  * ${DESCRIPTION}

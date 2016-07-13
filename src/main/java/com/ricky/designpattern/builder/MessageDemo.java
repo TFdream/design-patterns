@@ -1,7 +1,7 @@
 package com.ricky.designpattern.builder;
 
 
-import com.ricky.designpattern.builder.ch3.Message;
+import com.ricky.designpattern.builder.ch4.Message;
 
 /**
  * ${DESCRIPTION}

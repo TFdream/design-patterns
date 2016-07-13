@@ -1,4 +1,4 @@
-package com.ricky.designpattern.singleton.ch3;
+package com.ricky.designpattern.singleton.ch4;
 
 /**
  * 单例模式-懒汉式

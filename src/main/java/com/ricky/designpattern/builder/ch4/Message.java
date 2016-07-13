@@ -1,4 +1,4 @@
-package com.ricky.designpattern.builder.ch3;
+package com.ricky.designpattern.builder.ch4;
 
 /**
  * ${DESCRIPTION}
