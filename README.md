@@ -17,10 +17,10 @@
 * Product：产品角色
 
 ###代码示例
-[示例1](src/main/java/com/ricky/designpattern/builder/PersonBuilderDemo.java)
-[示例2](src/main/java/com/ricky/designpattern/builder/CarDemo.java)
-[示例3](src/main/java/com/ricky/designpattern/builder/MessageDemo.java)
-[示例4](src/main/java/com/ricky/designpattern/builder/MessageDemo.java)
+[示例1:PersonBuilderDemo](src/main/java/com/ricky/designpattern/builder/PersonBuilderDemo.java)<br>
+[示例2:CarDemo.java](src/main/java/com/ricky/designpattern/builder/CarDemo.java)<br>
+[示例3:IvrEngineDemo.java](src/main/java/com/ricky/designpattern/builder/IvrEngineDemo.java)<br>
+[示例4:MessageDemo.java](src/main/java/com/ricky/designpattern/builder/MessageDemo.java)<br>
 <br>
 ### 优缺点
 #### 优点
