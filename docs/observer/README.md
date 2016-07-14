@@ -16,7 +16,7 @@
 
 ### 3.代码示例
 [示例1:标准观察者模式](../../design-patterns/src/main/java/com/ricky/designpattern/observer/StandardObserverDemo.java)<br>
-[示例2:JDK内置接口和类实现观察者模式](design-patterns/src/main/java/com/ricky/designpattern/observer/JDKObserverDemo.java)<br>
+[示例2:JDK内置接口和类实现观察者模式](../../design-patterns/src/main/java/com/ricky/designpattern/observer/JDKObserverDemo.java)<br>
 <br>
 
 
