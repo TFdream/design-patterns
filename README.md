@@ -61,7 +61,12 @@
 * 需要生成的产品对象的属性相互依赖，需要指定其生成顺序。
 * 隔离复杂对象的创建和使用，并使得相同的创建过程可以创建不同的产品。
 
-### 8.资料
+
+### 8.案例
+[OkHttp](http://square.github.io/okhttp/)<br>
+[HttpClient 4.5](https://hc.apache.org/httpcomponents-client-4.5.x/examples.html)<br>
+<br>
+### 9.资料
 [java-design-patterns](https://github.com/iluwatar/java-design-patterns)<br>
 
 
