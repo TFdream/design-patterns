@@ -1,6 +1,6 @@
 # Design-patterns
 ## Design patterns written in Java
-### 目录
+### Directory
 #### 单例模式
 [单例模式示例](docs/singleton/)<br>
 <br>
