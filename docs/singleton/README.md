@@ -1,4 +1,3 @@
-# Design-patterns
 ## Singleton Pattern
 ### 1.模式定义
 确保一个类仅有一个实例，并且提供一个访问它的全局访问点。
