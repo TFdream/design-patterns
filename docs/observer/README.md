@@ -11,8 +11,8 @@
 * Observer：抽象观察者角色。定义主题通知对应的更新接口。
 * ConcreteSubject：具体主题角色
 * ConcreteObserver：具体观察者角色
-
-[Observer]: http://www.ibm.com/developerworks/cn/java/j-lo-design-pattern-extention/img001.png "Observer Pattern"
+<br>
+![GitHub](http://www.ibm.com/developerworks/cn/java/j-lo-design-pattern-extention/img001.png "GitHub,Social Coding")
 <br>
 
 ### 3.代码示例
