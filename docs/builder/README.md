@@ -21,10 +21,10 @@
 ![GitHub](http://images.cnblogs.com/cnblogs_com/feipeng/Pic11.jpg "Builder Pic")
 
 ###4.代码示例
-[示例1:PersonBuilderDemo.java](src/main/java/com/ricky/designpattern/builder/PersonBuilderDemo.java)<br>
-[示例2:CarDemo.java](src/main/java/com/ricky/designpattern/builder/CarDemo.java)<br>
-[示例3:IvrEngineDemo.java](src/main/java/com/ricky/designpattern/builder/IvrEngineDemo.java)<br>
-[示例4:MessageDemo.java](src/main/java/com/ricky/designpattern/builder/MessageDemo.java)<br>
+[示例1:PersonBuilderDemo.java](../../design-patterns/src/main/java/com/ricky/designpattern/builder/PersonBuilderDemo.java)<br>
+[示例2:CarDemo.java](../../design-patterns/src/main/java/com/ricky/designpattern/builder/CarDemo.java)<br>
+[示例3:IvrEngineDemo.java](../../design-patterns/src/main/java/com/ricky/designpattern/builder/IvrEngineDemo.java)<br>
+[示例4:MessageDemo.java](../../design-patterns/src/main/java/com/ricky/designpattern/builder/MessageDemo.java)<br>
 <br>
 ### 5.优缺点
 #### 优点
