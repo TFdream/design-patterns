@@ -44,14 +44,15 @@ String run(String url) throws IOException {
 下面是Request源码：
 ```
 public final class Request {
-  private final HttpUrl url;
-  private final String method;
-  private final Headers headers;
-  private final RequestBody body;
+  private final HttpUrl url;	//请求url
+  private final String method;	//http请求类型,"GET"|"POST"|"DELETE"
+  private final Headers headers;	//http请求头
+  private final RequestBody body;	//请求体
   private final Object tag;
 
   private volatile CacheControl cacheControl; // Lazily initialized.
 
+  // 1.构造函数
   private Request(Builder builder) {
     this.url = builder.url;
     this.method = builder.method;
@@ -88,12 +89,9 @@ public final class Request {
     return tag;
   }
 
-  public Builder newBuilder() {
-    return new Builder(this);
-  }
+  //省略其他代码......
 
-  //省略其他代码
-
+  /**静态内部类Builder**/
   public static class Builder {
     private HttpUrl url;
     private String method;
@@ -104,6 +102,20 @@ public final class Request {
     public Builder() {
       this.method = "GET";
       this.headers = new Headers.Builder();
+    }
+
+    private Builder(Request request) {
+      this.url = request.url;
+      this.method = request.method;
+      this.body = request.body;
+      this.tag = request.tag;
+      this.headers = request.headers.newBuilder();
+    }
+
+    public Builder url(HttpUrl url) {
+      if (url == null) throw new NullPointerException("url == null");
+      this.url = url;
+      return this;
     }
 
     public Builder url(String url) {
@@ -182,34 +194,21 @@ public final class Request {
       return method("PATCH", body);
     }
 
-    public Builder method(String method, RequestBody body) {
-      if (method == null) throw new NullPointerException("method == null");
-      if (method.length() == 0) throw new IllegalArgumentException("method.length() == 0");
-      if (body != null && !HttpMethod.permitsRequestBody(method)) {
-        throw new IllegalArgumentException("method " + method + " must not have a request body.");
-      }
-      if (body == null && HttpMethod.requiresRequestBody(method)) {
-        throw new IllegalArgumentException("method " + method + " must have a request body.");
-      }
-      this.method = method;
-      this.body = body;
-      return this;
-    }
-
     public Builder tag(Object tag) {
       this.tag = tag;
       return this;
     }
-
+	
+    // 调用new AlertDialog构造对象
     public Request build() {
-      if (url == null) throw new IllegalStateException("url == null");
+      if (url == null) throw new IllegalStateException("url == null");	  
       return new Request(this);
     }
   }
 }
 ```
 
-其中，Request.Builder类扮演Director与Builder双重角色。
+Request.Builder类扮演Director与Builder双重角色。
 <br>
 ### Android源码中的Builder模式实现
 在Android源码中，最常用到的Builder模式就是AlertDialog.Builder， 使用该Builder来构建复杂的AlertDialog对象。如下 :
