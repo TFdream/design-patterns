@@ -208,6 +208,8 @@ public final class Request {
   }
 }
 ```
+
+其中，Request.Builder类扮演Director与Builder双重角色。
 <br>
 ### Android源码中的Builder模式实现
 在Android源码中，最常用到的Builder模式就是AlertDialog.Builder， 使用该Builder来构建复杂的AlertDialog对象。如下 :
