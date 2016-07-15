@@ -8,6 +8,10 @@ package com.ricky.designpattern.builder.ch6;
  */
 public class AppleComputer extends Computer {
 
+    AppleComputer(){
+
+    }
+
     @Override
     public void start() {
         System.out.println("Apple PC start!");

@@ -11,6 +11,9 @@ public class Product {
     private String partB;
     private String partC;
 
+    Product(){
+    }
+
     public String getPartA() {
         return partA;
     }
