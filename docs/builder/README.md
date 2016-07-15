@@ -72,8 +72,165 @@ String run(String url) throws IOException {
     } 
 ```
 
-显示效果如下：
+显示效果如下：<br>
 ![GitHub](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/raw/master/builder/mr.simple/images/result.png "Builder Pic")
+<br>
+Android AlertDialog 源码 :
+```
+
+// AlertDialog
+public class AlertDialog extends Dialog implements DialogInterface {
+    // Controller, 接受Builder成员变量P中的各个参数
+    private AlertController mAlert;
+
+    // 构造函数
+    protected AlertDialog(Context context, int theme) {
+        this(context, theme, true);
+    }
+
+    AlertDialog(Context context, int theme, boolean createContextWrapper) {
+        super(context, resolveDialogTheme(context, theme), createContextWrapper);
+        mWindow.alwaysReadCloseOnTouchAttr();
+        mAlert = new AlertController(getContext(), this, getWindow());
+    }
+
+    // 实际上调用的是mAlert的setTitle方法
+    @Override
+    public void setTitle(CharSequence title) {
+        super.setTitle(title);
+        mAlert.setTitle(title);
+    }
+
+    // 实际上调用的是mAlert的setCustomTitle方法
+    public void setCustomTitle(View customTitleView) {
+        mAlert.setCustomTitle(customTitleView);
+    }
+
+    public void setMessage(CharSequence message) {
+        mAlert.setMessage(message);
+    }
+
+    // AlertDialog其他的代码省略
+
+    // ************  Builder为AlertDialog的内部类   *******************
+    public static class Builder {
+        //存储AlertDialog的各个参数, 例如title, message, icon等.
+        private final AlertController.AlertParams P;
+        // 属性省略
+
+        /**
+         * Constructor using a context for this builder and the {@link AlertDialog} it creates.
+         */
+        public Builder(Context context) {
+            this(context, resolveDialogTheme(context, 0));
+        }
+
+        public Builder(Context context, int theme) {
+            P = new AlertController.AlertParams(new ContextThemeWrapper(
+                    context, resolveDialogTheme(context, theme)));
+            mTheme = theme;
+        }
+
+        // Builder的其他代码省略 ......
+
+        public Builder setTitle(CharSequence title) {
+            P.mTitle = title;
+            return this;
+        }
+
+        public Builder setMessage(CharSequence message) {
+            P.mMessage = message;
+            return this;
+        }
+
+        public Builder setIcon(int iconId) {
+            P.mIconId = iconId;
+            return this;
+        }
+
+        public Builder setPositiveButton(CharSequence text, final OnClickListener listener) {
+            P.mPositiveButtonText = text;
+            P.mPositiveButtonListener = listener;
+            return this;
+        }
+
+        public Builder setView(View view) {
+            P.mView = view;
+            P.mViewSpacingSpecified = false;
+            return this;
+        }
+
+        public AlertDialog create() {
+            // 调用new AlertDialog构造对象， 并且将参数传递个体AlertDialog 
+            final AlertDialog dialog = new AlertDialog(P.mContext, mTheme, false);
+            // 5 : 将P中的参数应用的dialog中的mAlert对象中
+            P.apply(dialog.mAlert);
+            dialog.setCancelable(P.mCancelable);
+            if (P.mCancelable) {
+                dialog.setCanceledOnTouchOutside(true);
+            }
+            dialog.setOnCancelListener(P.mOnCancelListener);
+            if (P.mOnKeyListener != null) {
+                dialog.setOnKeyListener(P.mOnKeyListener);
+            }
+            return dialog;
+        }
+    }
+
+}
+```
+可以看到，通过Builder来设置AlertDialog中的title, message, button等参数， 这些参数都存储在类型为AlertController.AlertParams的成员变量P中，AlertController.AlertParams中包含了与之对应的成员变量。在调用Builder类的create函数时才创建AlertDialog, 并且将Builder成员变量P中保存的参数应用到AlertDialog的mAlert对象中，即P.apply(dialog.mAlert)代码段。apply函数的实现 :
+```
+public void apply(AlertController dialog) {
+	if (mCustomTitleView != null) {
+		dialog.setCustomTitle(mCustomTitleView);
+	} else {
+		if (mTitle != null) {
+			dialog.setTitle(mTitle);
+		}
+		if (mIcon != null) {
+			dialog.setIcon(mIcon);
+		}
+		if (mIconId >= 0) {
+			dialog.setIcon(mIconId);
+		}
+		if (mIconAttrId > 0) {
+			dialog.setIcon(dialog.getIconAttributeResId(mIconAttrId));
+		}
+	}
+	if (mMessage != null) {
+		dialog.setMessage(mMessage);
+	}
+	if (mPositiveButtonText != null) {
+		dialog.setButton(DialogInterface.BUTTON_POSITIVE, mPositiveButtonText,
+				mPositiveButtonListener, null);
+	}
+	if (mNegativeButtonText != null) {
+		dialog.setButton(DialogInterface.BUTTON_NEGATIVE, mNegativeButtonText,
+				mNegativeButtonListener, null);
+	}
+	if (mNeutralButtonText != null) {
+		dialog.setButton(DialogInterface.BUTTON_NEUTRAL, mNeutralButtonText,
+				mNeutralButtonListener, null);
+	}
+	if (mForceInverseBackground) {
+		dialog.setInverseBackgroundForced(true);
+	}
+	// For a list, the client can either supply an array of items or an
+	// adapter or a cursor
+	if ((mItems != null) || (mCursor != null) || (mAdapter != null)) {
+		createListView(dialog);
+	}
+	if (mView != null) {
+		if (mViewSpacingSpecified) {
+			dialog.setView(mView, mViewSpacingLeft, mViewSpacingTop, mViewSpacingRight,
+					mViewSpacingBottom);
+		} else {
+			dialog.setView(mView);
+		}
+	}
+}
+```
 
 <br>
 ### 优缺点
