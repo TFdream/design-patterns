@@ -27,7 +27,7 @@
 <br>
 
 ### OkHttp 源码中的Builder模式实现
-在Square OkHttp 中，经常用到的Builder模式就是Request.Builder，通过它来构造Request请求对象，如下：
+在[Square OkHttp](https://github.com/square/okhttp) 中，经常用到的Builder模式就是[Request.Builder](https://github.com/square/okhttp/blob/parent-3.4.0/okhttp/src/main/java/okhttp3/Request.java)，通过它来构造Request请求对象，如下：
 ```
 OkHttpClient client = new OkHttpClient();
 
@@ -42,6 +42,38 @@ String run(String url) throws IOException {
 ```
 <br>
 ### Android源码中的Builder模式实现
+在Android源码中，最常用到的Builder模式就是AlertDialog.Builder， 使用该Builder来构建复杂的AlertDialog对象。如下 :
+```
+    //显示基本的AlertDialog  
+    private void showDialog(Context context) {  
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);  
+        builder.setIcon(R.drawable.icon);  
+        builder.setTitle("Title");  
+        builder.setMessage("Message");  
+        builder.setPositiveButton("Button1",  
+                new DialogInterface.OnClickListener() {  
+                    public void onClick(DialogInterface dialog, int whichButton) {  
+                        setTitle("点击了对话框上的Button1");  
+                    }  
+                });  
+        builder.setNeutralButton("Button2",  
+                new DialogInterface.OnClickListener() {  
+                    public void onClick(DialogInterface dialog, int whichButton) {  
+                        setTitle("点击了对话框上的Button2");  
+                    }  
+                });  
+        builder.setNegativeButton("Button3",  
+                new DialogInterface.OnClickListener() {  
+                    public void onClick(DialogInterface dialog, int whichButton) {  
+                        setTitle("点击了对话框上的Button3");  
+                    }  
+                });  
+        builder.create().show();  // 构建AlertDialog， 并且显示
+    } 
+```
+
+显示效果如下：
+![GitHub](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/raw/master/builder/mr.simple/images/result.png "Builder Pic")
 
 <br>
 ### 优缺点
