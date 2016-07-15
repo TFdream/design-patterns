@@ -401,13 +401,13 @@ public void apply(AlertController dialog) {
 ```
 实际上就是把P中的参数挨个的设置到AlertController中，也就是AlertDialog中的mAlert对象。在这里，Builder同时扮演了上文中提到的builder、ConcreteBuilder、Director的角色，简化了Builder模式的设计。
 <br>
-### 优缺点
-#### 优点
+
+### 优点
 * 良好的封装性，使用建造者模式可以使客户端不必知道产品内部组成的细节。
 * 可以更加精细地控制产品的创建过程。将复杂产品的创建步骤分解在不同的方法中，使得创建过程更加清晰，也更方便使用程序来控制创建过程。
-* 指挥者类针对抽象建造者类编程，易于扩展，符合“开闭原则”。
+* 客户端针对抽象建造者类编程，易于扩展，符合“开闭原则”。
 
-#### 缺点
+### 缺点
 * 使用Builder模式会增加代码量的，产生多余的Builder对象以及Director对象。
 * 对象的构建过程暴露。
 
@@ -426,6 +426,12 @@ public void apply(AlertController dialog) {
 * 隔离复杂对象的创建和使用，并使得相同的创建过程可以创建不同的产品。
 
 
+### 模式扩展
+建造者模式的简化:
+* 省略抽象建造者角色：如果系统中只需要一个具体建造者的话，可以省略掉抽象建造者。
+* 省略指挥者角色：在具体建造者只有一个的情况下，如果抽象建造者角色已经被省略掉，那么还可以省略指挥者角色，让Builder角色扮演指挥者与建造者双重角色。
+
+<br>
 ### 设计模式学习资料
 [java-design-patterns](https://github.com/iluwatar/java-design-patterns)<br>
 
