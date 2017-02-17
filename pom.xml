@@ -18,6 +18,9 @@
 		<module>abstract-factory</module>
 		<module>builder</module>
 		<module>observer</module>
+		<module>proxy</module>
+		<module>chain</module>
+		<module>interceptor</module>
 	</modules>
 
 	<properties>
