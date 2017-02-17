@@ -1,4 +1,4 @@
-# proxy pattern (抽象工厂模式)
+# proxy pattern (代理模式)
 ## 1.模式定义
 
 ## 2.代码示例
