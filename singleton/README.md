@@ -99,6 +99,12 @@ public enum Singleton {
 }
 ```
 
+call:
+```
+Singleton singleton = Singleton.INSTANCE;
+singleton.doSomeAction();
+```
+
 
 
 
