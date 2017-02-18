@@ -9,7 +9,7 @@
 
 * 抽象处理者(Handler)角色：定义出一个处理请求的接口。如果需要，接口可以定义 出一个方法以设定和返回对下家的引用。这个角色通常由一个Java抽象类或者Java接口实现。
 
-*具体处理者(ConcreteHandler)角色：具体处理者接到请求后，可以选择将请求处理掉，或者将请求传给下家。由于具体处理者持有对下家的引用，因此，如果需要，具体处理者可以访问下家。
+* 具体处理者(ConcreteHandler)角色：具体处理者接到请求后，可以选择将请求处理掉，或者将请求传给下家。由于具体处理者持有对下家的引用，因此，如果需要，具体处理者可以访问下家。
 
 
 ## 2.代码示例
@@ -62,7 +62,7 @@ public class ConcreteHandler implements Handler {
 }
 ```
 
-client:
+client call:
 ```
 ConcreteHandler handler1 = new ConcreteHandler("1");
 ConcreteHandler handler2 = new ConcreteHandler("2");
@@ -119,7 +119,7 @@ public class FilterChainImpl implements FilterChain {
 }
 ```
 
-client:
+client call:
 ```
     List<Filter> filters = new ArrayList<>();
     for(int i=1; i<=5;i++){
