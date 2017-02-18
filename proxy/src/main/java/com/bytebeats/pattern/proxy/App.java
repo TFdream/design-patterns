@@ -1,4 +1,4 @@
-package com.bytebeats;
+package com.bytebeats.pattern.proxy;
 
 /**
  * Hello world!

@@ -137,6 +137,5 @@ public class CglibProxyDemo {
 ### 示例4
 使用Javassist生成代理实例
 ```
-//TODO
-
+nop
 ```

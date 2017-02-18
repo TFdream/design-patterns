@@ -1,4 +1,4 @@
-package com.bytebeats;
+package com.bytebeats.pattern.chain;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

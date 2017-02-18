@@ -99,7 +99,7 @@ public enum Singleton {
 }
 ```
 
-call:
+client call:
 ```
 Singleton singleton = Singleton.INSTANCE;
 singleton.doSomeAction();
