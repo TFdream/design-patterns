@@ -6,8 +6,7 @@ package com.bytebeats.pattern.observer.ch1;
  * @author Ricky Fung
  * @create 2016-07-14 23:01
  */
-public interface IObserver {
+public interface Observer {
 
-	public void update(Object msg);
-//	public void update(ISubject subject, Object msg);
+	void update(Object msg);
 }

@@ -21,6 +21,8 @@
 		<module>proxy</module>
 		<module>chain</module>
 		<module>interceptor</module>
+		<module>command</module>
+		<module>state</module>
 	</modules>
 
 	<properties>

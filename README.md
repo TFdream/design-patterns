@@ -1,4 +1,4 @@
-# Design-patterns
+# design-patterns
 Common design patterns written in Java.
 
 
