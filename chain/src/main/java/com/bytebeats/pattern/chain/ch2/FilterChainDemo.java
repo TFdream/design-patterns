@@ -15,14 +15,7 @@ public class FilterChainDemo {
 
         List<Filter> filters = new ArrayList<>();
         for(int i=1; i<=5;i++){
-            final int id = i;
-            filters.add(new Filter() {
-                @Override
-                public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws Exception {
-                    System.out.println("Filter_"+id+" execute...");
-                    chain.doFilter(request, response);
-                }
-            });
+            filters.add(new DemoFilter("Filter_"+i));
         }
 
         ServletRequest request = new ServletRequest();
