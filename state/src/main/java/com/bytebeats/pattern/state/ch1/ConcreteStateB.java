@@ -6,10 +6,10 @@ package com.bytebeats.pattern.state.ch1;
  * @author Ricky Fung
  * @date 2017-02-28 15:25
  */
-public class ConcreteState1 implements State {
+public class ConcreteStateB implements State {
 
     @Override
     public void handle(String param) {
-        System.out.println("ConcreteState1 handle param:" + param);
+        System.out.println("ConcreteStateB handle param:" + param);
     }
 }

@@ -23,6 +23,7 @@
 		<module>interceptor</module>
 		<module>command</module>
 		<module>state</module>
+		<module>decorator</module>
 	</modules>
 
 	<properties>
