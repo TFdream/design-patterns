@@ -1,6 +1,4 @@
-package com.bytebeats.pattern.strategy.ch1.impl;
-
-import com.bytebeats.pattern.strategy.ch1.Strategy;
+package com.bytebeats.pattern.strategy.ch1;
 
 /**
  * ${DESCRIPTION}
@@ -8,7 +6,7 @@ import com.bytebeats.pattern.strategy.ch1.Strategy;
  * @author Ricky Fung
  * @date 2017-02-28 13:03
  */
-public class ConcreteStrategy2 implements Strategy {
+public class ConcreteStrategyB implements Strategy {
 
     @Override
     public void algorithm() {

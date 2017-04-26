@@ -1,13 +1,11 @@
 # strategy pattern (策略模式)
 
-完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。
-
-在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。
-
-为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。
-
 ## 模式定义
-> 定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。
+> 定义一系列算法，将它们一个个封装起来，并且使他们之间可以相互替换。本模式使得算法可以独立于使用它的客户而变化。
+
+策略模式是对算法的封装，把一系列的算法分别封装到对应的类中，并且这些类实现相同的接口，相互之间可以替换。
+在前面说过的行为类模式中，有一种模式也是关注对算法的封装——模版方法模式，对照类图可以看到，策略模式与模版方法模式的区别仅仅是多了一个单独的封装类Context，
+它与模版方法模式的区别在于：在模版方法模式中，调用算法的主体在抽象的父类中，而在策略模式中，调用算法的主体则是封装到了封装类Context中，抽象策略Strategy一般是一个接口，目的只是为了定义规范，里面一般不包含逻辑。
 
 ## 模式结构
 策略模式包含如下角色：
@@ -26,7 +24,7 @@ public interface Strategy {
 ```
 
 ```
-public class ConcreteStrategy1 implements Strategy {
+public class ConcreteStrategyA implements Strategy {
 
     @Override
     public void algorithm() {
@@ -36,7 +34,7 @@ public class ConcreteStrategy1 implements Strategy {
 ```
 
 ```
-public class ConcreteStrategy2 implements Strategy {
+public class ConcreteStrategyB implements Strategy {
 
     @Override
     public void algorithm() {
@@ -67,11 +65,11 @@ public class Client {
 
         Context context = new Context();
         System.out.println("-----执行策略1-----");
-        context.setStrategy(new ConcreteStrategy1());
+        context.setStrategy(new ConcreteStrategyA());
         context.algorithm();
 
         System.out.println("-----执行策略2-----");
-        context.setStrategy(new ConcreteStrategy1());
+        context.setStrategy(new ConcreteStrategyB());
         context.algorithm();
     }
 }

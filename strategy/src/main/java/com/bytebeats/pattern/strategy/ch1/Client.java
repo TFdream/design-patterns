@@ -1,7 +1,5 @@
 package com.bytebeats.pattern.strategy.ch1;
 
-import com.bytebeats.pattern.strategy.ch1.impl.ConcreteStrategy1;
-
 /**
  * ${DESCRIPTION}
  *
@@ -14,11 +12,11 @@ public class Client {
 
         Context context = new Context();
         System.out.println("-----执行策略1-----");
-        context.setStrategy(new ConcreteStrategy1());
+        context.setStrategy(new ConcreteStrategyA());
         context.algorithm();
 
         System.out.println("-----执行策略2-----");
-        context.setStrategy(new ConcreteStrategy1());
+        context.setStrategy(new ConcreteStrategyA());
         context.algorithm();
     }
 }
