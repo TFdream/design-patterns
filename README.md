@@ -1,5 +1,5 @@
 # design-patterns
-Common design patterns written in Java.
+Java design patterns showcase.
 
 
 
