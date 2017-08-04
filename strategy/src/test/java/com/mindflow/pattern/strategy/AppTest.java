@@ -1,4 +1,4 @@
-package com.mindflow.pattern.template;
+package com.mindflow.pattern.strategy;
 
 import org.junit.Test;
 

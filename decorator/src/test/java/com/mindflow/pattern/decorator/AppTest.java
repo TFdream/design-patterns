@@ -1,9 +1,9 @@
-package com.mindflow.pattern.template;
+package com.mindflow.pattern.decorator;
 
 import org.junit.Test;
 
 /**
- * Unit test for simple App.
+ * @author Ricky Fung
  */
 public class AppTest {
 

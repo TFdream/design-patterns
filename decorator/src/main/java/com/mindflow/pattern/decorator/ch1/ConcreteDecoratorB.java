@@ -1,4 +1,4 @@
-package com.mindflow.decorator.ch1;
+package com.mindflow.pattern.decorator.ch1;
 
 /**
  * ${DESCRIPTION}
