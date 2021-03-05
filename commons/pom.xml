@@ -11,7 +11,7 @@
 	<artifactId>commons</artifactId>
 	<packaging>jar</packaging>
 
-	<name>singleton</name>
+	<name>${project.artifactId}</name>
 	<url>https://github.com/TFdream/design-patterns</url>
 
 	<properties>
