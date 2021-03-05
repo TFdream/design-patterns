@@ -8,7 +8,7 @@
 	
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>singleton</artifactId>
+	<artifactId>commons</artifactId>
 	<packaging>jar</packaging>
 
 	<name>singleton</name>
@@ -19,10 +19,17 @@
 	</properties>
 
 	<dependencies>
-        <dependency>
-            <groupId>io.bitmuse</groupId>
-            <artifactId>commons</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
+		<!-- commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${gson.version}</version>
+		</dependency>
 	</dependencies>
 </project>

@@ -2,28 +2,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mindflow</groupId>
+	<groupId>io.bitmuse</groupId>
 	<artifactId>design-patterns</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<name>design-patterns</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/TFdream/design-patterns</url>
 
 	<modules>
+        <module>commons</module>
 		<module>singleton</module>
-		<module>strategy</module>
-		<module>template-method</module>
-		<module>factory-method</module>
-		<module>abstract-factory</module>
-		<module>builder</module>
-		<module>observer</module>
 		<module>proxy</module>
-		<module>chain</module>
-		<module>interceptor</module>
-		<module>command</module>
-		<module>state</module>
-		<module>decorator</module>
 	</modules>
 
 	<properties>
@@ -37,14 +27,7 @@
 	</properties>
 
 	<dependencies>
-        <!-- commons-lang3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
-
-        <dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>

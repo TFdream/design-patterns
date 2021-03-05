@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.mindflow</groupId>
+        <groupId>io.bitmuse</groupId>
         <artifactId>design-patterns</artifactId>
         <version>1.0.0</version>
     </parent>
@@ -11,13 +11,19 @@
     <packaging>jar</packaging>
 
     <name>proxy</name>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/TFdream/design-patterns</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.bitmuse</groupId>
+            <artifactId>commons</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
